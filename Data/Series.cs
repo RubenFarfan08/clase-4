@@ -6,5 +6,7 @@ namespace Netflix.Data
         public string Descripcion { get; set; }
         public string RutaPelicula { get; set; }
         public int Rating { get; set; }
+
     }
 }
+

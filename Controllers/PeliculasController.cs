@@ -45,7 +45,7 @@ namespace clase_4.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPeliculas(int id, Peliculas peliculas)
+        public async Task<ActionResult<Peliculas>> PutPeliculas(int id, Peliculas peliculas)
         {
             if (id != peliculas.Id)
             {
@@ -57,6 +57,7 @@ namespace clase_4.Controllers
             try
             {
                 await _context.SaveChangesAsync();
+                return peliculas;
             }
             catch (DbUpdateConcurrencyException)
             {
